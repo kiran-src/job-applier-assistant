@@ -28,8 +28,9 @@ for j in keywords:
         apply_button = driver.find_element(By.CLASS_NAME, "jobs-apply-button--top-card")
         apply_button.click()
         driver.find_elements(By.CSS_SELECTOR, "div.display-flex button.artdeco-button").click()
-        driver.find_elements(By.CSS_SELECTOR, "div.display-flex button.artdeco-button--primary").click()
-        a = input()
+        final_button = driver.find_elements(By.CSS_SELECTOR, "div.display-flex button.artdeco-button--primary").click()
+        if final_button.find_element(By.TAG_NAME, "span").text != "Submit application":
+            a = input()
     driver.close()
 
 
